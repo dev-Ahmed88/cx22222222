@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #FFFFFF;
+  --paper: #F8FAFC;
+  --ink: #102A43;
+  --ink-soft: #486581;
+  --rule: #E4E7EB;
+  --border: #D9E2EC;
+  --muted-foreground: #627D98;
+  --accent: #C7362E;
+  --accent-foreground: #FFFFFF;
+}
+
+@layer base {
+  .cx-framework-app, #root {
+    font-family: 'Montserrat', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  .cx-framework-app h1, 
+  .cx-framework-app h2, 
+  .cx-framework-app h3, 
+  .cx-framework-app h4, 
+  .cx-framework-app .font-serif, 
+  .cx-framework-app .font-heading {
+    font-family: 'Archivo Black', 'Alexandria', 'Readex Pro', 'IBM Plex Sans Arabic', sans-serif !important;
+    letter-spacing: -0.015em;
+  }
+
+  /* WordPress Conflict Isolation & Responsive Admin Bar Offset */
+  body.admin-bar .cx-framework-app header.sticky {
+    top: 32px !important;
+  }
+  @media screen and (max-width: 782px) {
+    body.admin-bar .cx-framework-app header.sticky {
+      top: 46px !important;
+    }
+  }
+
+  /* Reset image and button styling inside framework app to avoid WP theme collisions */
+  .cx-framework-app img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .cx-framework-app button {
+    cursor: pointer;
+  }
+
+  /* Force sharp square corners (no rounding) on all buttons, boxes, inputs, modals, cards, badges */
+  *, ::before, ::after {
+    border-radius: 0 !important;
+  }
+}
+
+/* Custom glow and scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(199, 54, 46, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(199, 54, 46, 0.45);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "CX Strategy Lab",
+  "description": "موقع CX Strategy Lab المصمم وفق وثيقة التطوير للتفاعل والهوية البصرية الجديدة واستراتيجية تجربة العميل",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
